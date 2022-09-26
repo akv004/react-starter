@@ -1,5 +1,5 @@
 {
-    "name": "react-typescript-webpack-starter",
+    "name": "react-starter",
     "version": "3.0.0",
     "description": "A starter project for using React, TypeScript, SCSS and Webpack",
     "main": "index.js",
@@ -13,7 +13,7 @@
         "webpack",
         "scss"
     ],
-    "author": "Grant Bartlett",
+    "author": "AVerma",
     "license": "MIT",
     "dependencies": {
         "react": "^18.2.0",
