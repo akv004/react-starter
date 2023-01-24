@@ -16,9 +16,7 @@ const entryConfig = [
 // https://webpack.js.org/plugins/copy-webpack-plugin/
 const copyPluginPatterns = {
     patterns: [
-        { from: "./src/assets/images", to: "images" },
-        { from: "./src/assets/fonts", to: "fonts" },
-        { from: "./src/assets/vendor", to: "js" },
+        { from: "./src/assets/images", to: "images" }
     ]
 };
 

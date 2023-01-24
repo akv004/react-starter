@@ -1,33 +1,26 @@
-import React, { Component } from "react";
-import { App } from "./App";
-import { Hello } from "./components/Hello";
+import React, {useRef} from "react"
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+} from 'recoil';
+import TextInput from "./components/TextInput";
+import {MyCanvas} from "./components/MyCanvas";
+import {TwoCircle} from "./components/TwoCircle";
+import {TwoCirclePath2d} from "./components/TwoCirclePath2d";
+import {ItemClick} from "./components/ItemClick";
+import {CircleController} from "./components/CircleController";
 
-export interface MainProps
-{
-    app: App;
-}
 
-interface MainState 
-{
-}
-
-export class Main extends Component<MainProps, MainState>
-{
-    constructor(props: MainProps)
-    {
-        super(props);
-    }
-
-    public render(): JSX.Element
-    {
-        return (
-            <Hello message="React TypeScript Webpack Starter">
-                <div className="features">
-                    <div>Webpack 5 + HMR</div>
-                    <div>TypeScript + React</div>
-                    <div>SCSS + Autoprefixing</div>
-                </div>
-            </Hello>
-        );
-    }
-}
+export const Main = () => {
+    return (
+        <RecoilRoot>
+            <div>Hi12</div>
+            <CircleController/>
+            <TwoCirclePath2d/>
+            <ItemClick/>
+        </RecoilRoot>
+    );
+};

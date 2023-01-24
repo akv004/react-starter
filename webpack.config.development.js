@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { outputConfig, copyPluginPatterns, entryConfig, devServer } = require("./env.config");
+const { outputConfig, copyPluginPatterns, entryConfig, devServer } = require("./env.config");    devtool: 'inline-source-map',
 
 module.exports = (env, options) => 
 {
@@ -13,6 +13,7 @@ module.exports = (env, options) =>
         // Target must be set to web for hmr to work with .browserlist
         // https://github.com/webpack/webpack-dev-server/issues/2758#issuecomment-710086019
         target: "web",
+        devtool: 'inline-source-map',
         module: {
             rules: [
                 {
