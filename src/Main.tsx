@@ -12,15 +12,19 @@ import {TwoCircle} from "./components/TwoCircle";
 import {TwoCirclePath2d} from "./components/TwoCirclePath2d";
 import {ItemClick} from "./components/ItemClick";
 import {CircleController} from "./components/CircleController";
+import Canvas2 from "./components/Canvas2";
+import CanvasImageDrop from "./components/CanvasImageDrop";
+
 
 
 export const Main = () => {
     return (
         <RecoilRoot>
             <div>Hi12</div>
-            <CircleController/>
-            <TwoCirclePath2d/>
-            <ItemClick/>
+            {/*<CircleController/>*/}
+            {/*<TwoCirclePath2d/>*/}
+            {/*<ItemClick/>*/}
+            <CanvasImageDrop/>
         </RecoilRoot>
     );
 };

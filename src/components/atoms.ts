@@ -33,3 +33,26 @@ export const canvasState = atom({
 
 
 // Other atoms can be defined here as well
+
+export interface ItemProps {
+    x: number,
+    y: number,
+    width: number,
+    height:number,
+    id: string
+    item: Object
+}
+
+export const ItemsState = atom({
+    key: 'ItemState',
+    default: {
+        items: [] as ItemProps[]
+    }
+});
+
+export const imagesState = atom({
+    key: 'images',
+    default: {
+        images: [] as Object[]
+    }
+});
