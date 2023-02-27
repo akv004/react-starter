@@ -5,14 +5,16 @@
 import React, {useRef, useState} from "react";
 import {atom, useRecoilState} from "recoil";
 import {imagesState} from "./atoms";
+import {fromEvent} from "rxjs";
 
 
 
 
 const CanvasImageDrop = () => {
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<any>(null);
     const [imagesData, setImagesData] = useRecoilState(imagesState);
     //const [image, setImage] = useState<any>(null);
+
 
     const handleDrop = (e: any) => {
         e.preventDefault();
@@ -41,6 +43,24 @@ const CanvasImageDrop = () => {
         e.preventDefault();
     };
 
+    if (canvasRef.current){
+        console.log("canvas current is availalbe")
+        const mousedown$ = fromEvent<MouseEvent>(canvasRef?.current, 'mousedown');
+        const mouseup$ = fromEvent<MouseEvent>(canvasRef?.current, 'mouseup');
+        const mousemove$ = fromEvent<MouseEvent>(canvasRef?.current, 'mousemove');
+    }
+
+
+
+
+
+    // React.useEffect(() => {
+    //     const subscription = mousemove$ .subscribe(pos => {
+    //         console.log(JSON.stringify(pos))
+    //     });
+    //     return () => subscription.unsubscribe();
+    // }, [mousemove$ ]);
+
     return (
         <>
             <div
@@ -51,7 +71,7 @@ const CanvasImageDrop = () => {
 
                 <canvas style={{border: "1px solid black"}} ref={canvasRef} width={4000} height={4000}/>
             </div>
-            <h1>Count {imagesData?.images?.length}</h1>
+            <h1>Count {JSON.stringify(imagesData)}</h1>
         </>
     );
 };

@@ -31,6 +31,8 @@ export const TwoCircle: React.FC = () => {
      */
     const event = (e: Event) => e as MouseEvent;
 
+
+
     useEffect(() => {
         const canvas = canvasRef.current!;
         const ctx = canvas.getContext('2d')!;
